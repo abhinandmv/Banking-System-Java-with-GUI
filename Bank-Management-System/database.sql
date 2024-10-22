@@ -1,11 +1,10 @@
 CREATE DATABASE IF NOT EXISTS bankSystem;
 USE bankSystem;
-
-CREATE TABLE IF NOT EXISTS signup (
+CREATE TABLE signup (
     formno VARCHAR(20) PRIMARY KEY,
     name VARCHAR(50),
     fname VARCHAR(50),
-    dob DATE,
+    dob varchar(30),
     gender VARCHAR(10),
     email VARCHAR(100),
     marital VARCHAR(20),
@@ -14,35 +13,24 @@ CREATE TABLE IF NOT EXISTS signup (
     pincode VARCHAR(10),
     state VARCHAR(50)
 );
-CREATE TABLE SignupDetails (
-    form_number VARCHAR(20) PRIMARY KEY,
-    pan_number VARCHAR(20),
-    aadhar_number VARCHAR(20),
-    combo_box1_selection VARCHAR(50),
-    combo_box2_selection VARCHAR(50),
-    combo_box3_selection VARCHAR(50),
-    combo_box4_selection VARCHAR(50),
-    combo_box5_selection VARCHAR(50),
-    radio_button1_selection BOOLEAN,
-    radio_button2_selection BOOLEAN,
-    radio_button3_selection BOOLEAN,
-    radio_button4_selection BOOLEAN
+CREATE TABLE signuptwo (
+    formno VARCHAR(50) PRIMARY KEY,
+    religion VARCHAR(50),
+    category VARCHAR(50),
+    income varchar(30),
+    education VARCHAR(50),
+    occupation VARCHAR(100),
+    pan VARCHAR(50),
+    addhar VARCHAR(255),
+    seniorcitizen VARCHAR(50),
+    existing_account VARCHAR(10)
 );
-CREATE TABLE AccountDetails (
-    form_number VARCHAR(20) PRIMARY KEY,
-    account_type VARCHAR(50),
-    facility_cheque_book BOOLEAN,
-    facility_internet_banking BOOLEAN,
-    facility_mobile_banking BOOLEAN,
-    facility_email_alerts BOOLEAN,
-    facility_e_statement BOOLEAN,
-    facility_atm_card BOOLEAN
+CREATE TABLE signupthree (
+    formno VARCHAR(50) PRIMARY KEY,
+	account_type VARCHAR(50),
+    card_number VARCHAR(50),
+    pin varchar(30),
+    facility VARCHAR(200)
 );
-CREATE TABLE Withdrawals (
-    transaction_id INT PRIMARY KEY AUTO_INCREMENT,
-    account_pin VARCHAR(20) NOT NULL,
-    withdrawal_amount DECIMAL(10, 2) NOT NULL,
-    transaction_date DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (account_pin) REFERENCES Accounts(pin)
-);
- 
+create TABLE LOGIN( form_no varchar(30), card_number varchar(50), pin varchar(30));
+create table bank (pin varchar(10) , date varchar(30),type varchar(30) , amount varchar(20)); 
